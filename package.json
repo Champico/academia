@@ -1,0 +1,18 @@
+{
+  "name": "academia",
+  "version": "1.0.0",
+  "description": "API academia",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node --watch index.js"
+  },
+  "author": "champico",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "1.4.7",
+    "express": "4.21.1",
+    "jsonwebtoken": "9.0.2",
+    "zod": "^3.23.8"
+  }
+}
