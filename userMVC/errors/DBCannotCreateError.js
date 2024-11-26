@@ -1,4 +1,6 @@
-class DBCannotCreateError extends Error {
+// userMVC/errors/DBCannotCreateError.js
+
+export default class DBCannotCreateError extends Error {
     constructor(message = 'No se pudo crear el item') {
         super(message);
 
@@ -6,5 +8,3 @@ class DBCannotCreateError extends Error {
         this.statusCode = 500;
     }
 }
-
-module.exports = DBCannotCreateError;

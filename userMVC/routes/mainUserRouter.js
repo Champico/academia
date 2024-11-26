@@ -1,8 +1,8 @@
-// adminMVC/routes/mainUserRouter.js
+// adminMVC/routes/MainUserRouter.js
 
 import { Router } from 'express'
-import { createUserRouter } from './User'
-import { userModel } from '../models/mysql/User.js'
+import { createUserSessionRouter } from './UserSession.js'
+import { UserModel } from '../models/mysql/UserSession.js'
 
 
 
@@ -10,7 +10,7 @@ import { userModel } from '../models/mysql/User.js'
 export const createMainUserRouter = () => {
     const mainUserRouter = Router()
 
-    mainUserRouter.use('/user', createUserRouter({ userModel }))
+    mainUserRouter.use('/user', createUserSessionRouter({ userModel: UserModel }))
 }
 
 

@@ -1,10 +1,8 @@
-class EmptyParametersError extends Error {
+export default class EmptyParametersError extends Error {
     constructor(message = 'No se ingresarón datos') {
         super(message);
 
         this.name = 'EmptyParametersError';
-        this.statusCode = 500;
+        this.statusCode = 400;
     }
 }
-
-module.exports = EmptyParametersError;

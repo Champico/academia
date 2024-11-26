@@ -1,3 +1,5 @@
+// middleware/corsMiddleware.js
+
 import cors from 'cors'
 
 const ACCEPTED_ORIGINS = [

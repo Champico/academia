@@ -3,16 +3,19 @@
   "version": "1.0.0",
   "description": "API academia",
   "main": "app.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node --watch index.js"
+    "dev": "node --watch app.js"
   },
   "author": "champico",
   "license": "ISC",
   "dependencies": {
     "cookie-parser": "1.4.7",
+    "cors": "2.8.5",
     "express": "4.21.1",
     "jsonwebtoken": "9.0.2",
-    "zod": "^3.23.8"
+    "mysql2": "3.11.4",
+    "zod": "3.23.8"
   }
 }

@@ -2,10 +2,10 @@
 
 // Importar dependencias
 import express, { json } from 'express'
-import { corsMiddleware } from '/middlewares/corsMiddleware.js'
-import { PORT } from 'config.js'
+import { corsMiddleware } from './middlewares/corsMiddleware.js'
+import { PORT } from './config.js'
 import cookieParser from 'cookie-parser'
-import { mainUserRouter } from './userMVC/routes/mainUserRouter.js'
+import { createMainUserRouter } from './userMVC/routes/mainUserRouter.js'
 import { mainAdminRouter } from './adminMVC/routes/mainAdminRouter.js'
 
 //Crear y exportar aplicación
@@ -18,7 +18,7 @@ app.use(json())
 app.use(cookieParser())
 
 //Accesible al usuario
-app.use('/', mainUserRouter)
+app.use('/', createMainUserRouter)
 
 //Accesible al administrador
 app.use('/admin', mainAdminRouter)
