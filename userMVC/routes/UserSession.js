@@ -1,4 +1,4 @@
-// adminMVC/routes/userSessionRouter.js
+// userMVC/routes/userSessionRouter.js
 
 import { Router } from 'express'
 import { UserSessionController } from '../controllers/UserSession.js'

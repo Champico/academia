@@ -6,7 +6,7 @@ import { corsMiddleware } from './middlewares/corsMiddleware.js'
 import { PORT } from './config.js'
 import cookieParser from 'cookie-parser'
 import { createMainUserRouter } from './userMVC/routes/mainUserRouter.js'
-import { mainAdminRouter } from './adminMVC/routes/mainAdminRouter.js'
+import { createMainAdminRouter } from './adminMVC/routes/mainAdminRouter.js'
 import dotenv from 'dotenv';
 import { authMiddleware } from './middlewares/authMiddleware.js'
 import { jsonErrorMiddleware } from './middlewares/jsonErrorMiddleware.js'
@@ -31,7 +31,7 @@ app.use(authMiddleware)
 app.use('/user', createMainUserRouter())
 
 //Accesible al administrador
-app.use('/admin', mainAdminRouter)
+app.use('/admin', createMainAdminRouter())
 
 //Por defecto
 app.use((req, res) => {
