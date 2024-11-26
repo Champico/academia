@@ -4,7 +4,8 @@ import jwt from 'jsonwebtoken'
 import { SECRET_JWT_KEY } from '../config.js'
 
 export const authMiddleware = (req, res, next) => {
-    const token = req.cookies.access_token
+    console.log(" -- Solicitud de usuario", req.hostname, req.ip)
+    const token = req.cookies?.access_token
     req.session = { user: null }
 
     try {
@@ -16,3 +17,4 @@ export const authMiddleware = (req, res, next) => {
 
     next()
 }
+

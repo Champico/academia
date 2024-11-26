@@ -1,15 +1,23 @@
 // adminMVC/routes/userSessionRouter.js
 
 import { Router } from 'express'
-import { UserSessionController } from '../controllers/userSession.js'
+import { UserSessionController } from '../controllers/UserSession.js'
 
 
-export const createUserSessionRouter = ({ userModel }) => {
-    const userRouter = Router()
-    const userController = new UserController({ movieModel });
+export const createUserSessionRouter = ({ userSessionModel }) => {
+    const userSessionRouter = Router()
+    const userSessionController = new UserSessionController({ userSessionModel });
 
-    moviesRouter.post('/login', UserSessionController.iniciarSesion)
-    moviesRouter.post('/register', UserSessionController.registrar)
-    moviesRouter.post('/logout', UserSessionController.cerrarSesion)
+    userSessionRouter.post('/login', userSessionController.iniciarSesion)
+    userSessionRouter.post('/register', userSessionController.registrar)
+    userSessionRouter.post('/logout', userSessionController.cerrarSesion)
+    userSessionRouter.get('/status', userSessionController.verificarSesion)
+
+    //Por defecto
+    userSessionRouter.use((req, res) => {
+        res.status(404).send({ error: `Ruta no encontrada ${req.path} en usersession` })
+    })
+
+    return userSessionRouter;
 }
 

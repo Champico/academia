@@ -34,14 +34,15 @@ const usuarioSchema = z.object({
     id_facultad: z.number()
         .int("El ID de facultad debe ser un número entero.")
         .optional().nullable(),
+    id: z.number().positive().optional().nullable()
 })
 
 export function validarUsuarioDatos(object) {
-    return movieSchema.safeParse(object)
+    return usuarioSchema.safeParse(object)
 }
 
 export function validarParcialmenteUsuarioDatos(object) {
-    return movieSchema.partial().safeParse(object)
+    return usuarioSchema.partial().safeParse(object)
 }
 
 

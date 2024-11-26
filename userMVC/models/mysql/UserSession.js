@@ -2,7 +2,9 @@
 
 import mysql from 'mysql2/promise';
 import { DEFAULT_CONFIG } from './ConfigDB.js';
-import { NotFoundError, DBCannotCreateError, UserAlredyExitsError, DBConnectionError } from '../../errors/error.js';
+import { SALT_ROUNDS } from '../../../config.js'
+import { NotFoundError, DBCannotCreateError, UserAlredyExitsError, DBConnectionError, UserDoesntExitsError } from '../../errors/error.js';
+import bcrypt from 'bcrypt'
 
 const connectionString = process.env.DATABASE_UTL ?? DEFAULT_CONFIG;
 
@@ -17,21 +19,33 @@ let connection;
     }
 })();
 
-export class UserModel {
+export class UserSessionModel {
 
     // : : : : : : :  L O G I N  : : : : : : : :
     static async login({ correo, clave }) {
-        const [usuario] = await connection.query(
-            `SELECT correo, clave, nombre, paterno, materno, rol, id_facultad 
-             FROM usuario WHERE correo = ?`,
-            [correo]
-        );
 
-        if (!usuario || usuario.length === 0) {
-            return null; // Si no existe el usuario
+        console.log("Correo y clave despues de pasar", correo, " ", clave)
+
+        let usuario;
+
+        try {
+            [usuario] = await connection.query(
+                `SELECT correo, clave, nombre, paterno, materno, rol, id_facultad 
+                 FROM usuario WHERE correo = ?;`,
+                [correo]
+            );
+        } catch (e) {
+            throw new DBConnectionError()
         }
 
-        return usuario[0];
+        if (!usuario || usuario.length === 0) throw new UserDoesntExitsError()
+
+        const isValid = await bcrypt.compareSync(clave, usuario[0].clave)
+        if (!isValid) throw new Error('password is invalid')
+
+        const { clave: _, ...publicUser } = usuario[0]
+
+        return publicUser
     }
 
 
@@ -50,42 +64,45 @@ export class UserModel {
 
 
         //Verificar si existe el usuario
+        let result = null;
+
         try {
-            const [usuario] = await connection.query(
+            [result] = await connection.query(
                 `SELECT correo, nombre
                  FROM usuario WHERE correo = ?`,
                 [correo]
             );
 
-            if (usuario) {
-                throw new UserAlredyExitsError()
-            }
-        } catch {
-            console.log(error)
+        } catch (e) {
+            console.info("Error de la base de datos por: ", e)
             throw new DBConnectionError()
         }
 
+        if (result.length > 0) throw new UserAlredyExitsError();
 
-        // Verificar si existe facultad (si lo mando)
-        if (idFacultad !== null) {
+        //Verificar facultad
+        if (idFacultad) {
+            let result2 = null;
+
             try {
-                const [result] = await connection.query(
+                [result2] = await connection.query(
                     `SELECT id FROM facultad WHERE id = ?`, [idFacultad]
-                );
-                if (result.length > 0) {
-                    idFacultad = result[0].id;
-                } else {
-                    throw new NotFoundError('Facultad no encontrada');
-                }
+                )
             } catch (e) {
-                console.error(e);
-                throw new NotFoundError('No se encuentra la facultad')
+                console.info("Error de la base de datos por: ", e)
+                throw new DBConnectionError()
+            }
+
+            if (result2.length > 0) {
+                idFacultad = result2[0].id;
+            } else {
+                throw new NotFoundError('Facultad no encontrada');
             }
         }
 
         //Crear contraseña
-        const id = crypto.randomUUID()
-        const hashedPassword = await bcrypt.hash(password, SALT_ROUNDS)
+
+        const hashedPassword = await bcrypt.hash(clave, SALT_ROUNDS)
 
         // Crear usuario
         try {

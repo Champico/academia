@@ -17,5 +17,9 @@
     "jsonwebtoken": "9.0.2",
     "mysql2": "3.11.4",
     "zod": "3.23.8"
+  },
+  "devDependencies": {
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.5"
   }
 }

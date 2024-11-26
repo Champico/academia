@@ -15,3 +15,4 @@ export { default as EmptyParametersError } from './EmptyParametersError.js';
 export { default as DBCannotUpdateError } from './DBCannotUpdateItem.js';
 export { default as UserAlredyExitsError } from './loginErrors/UserAlredyExistsError.js';
 export { default as DBConnectionError } from './DBConnectionError.js';
+export { default as UserDoesntExitsError } from './loginErrors/UserDoesntExistsError.js'
