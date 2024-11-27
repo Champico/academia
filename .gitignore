@@ -1,0 +1,16 @@
+# Ignorar las carpetas de dependencias
+node_modules/
+
+# Ignorar la carpeta de pruebas
+test/
+
+# Ignorar archivos de configuración del editor
+.vscode/
+.idea/
+
+# Ignorar archivos de log
+*.log
+
+# Ignorar archivos temporales o de compilación
+dist/
+build/

@@ -28,14 +28,14 @@ export const createMainAdminRouter = () => {
     const mainAdminRouter = Router()
 
     mainAdminRouter.use('/region', createRegionRouter({ regionModel: RegionModel })) //API Region
-    mainAdminRouter.use('/areaAca', createAreaAcademicaRouter({ areaAcademicaModel: AreaAcademicaModel })) //API Area academica
+    mainAdminRouter.use('/areaAcademica', createAreaAcademicaRouter({ areaAcademicaModel: AreaAcademicaModel })) //API Area academica
     mainAdminRouter.use('/programa', createProgramaRouter({ programaModel: ProgramaModel })) //API Programas educativos
     mainAdminRouter.use('/facultad', createFacultadRouter({ facultadModel: FacultadModel })) //API Facultad
     mainAdminRouter.use('/academia', createAcademiaRouter({ academiaModel: AcademiaModel })) //API academia
     mainAdminRouter.use('/usuarios', createUsuarioRouter({ usuarioModel: UsuarioModel })) //API usuarios
     mainAdminRouter.use('/administradores', createAdminsRouter({ adminsModel: AdminsModel })) //API administradores
     mainAdminRouter.use('/periodo', createPeriodoRouter({ periodoModel: PeriodoModel })) //API periodo
-    mainAdminRouter.use('/periodo-academia', createPerAcaRouter({ perAcaModel: PerAcaModel })) //API periodo y academias
+    mainAdminRouter.use('/periodoAcademia', createPerAcaRouter({ perAcaModel: PerAcaModel })) //API periodo y academias
 
 
     //Por defecto
