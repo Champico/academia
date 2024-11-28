@@ -158,8 +158,8 @@ INSERT INTO facultad (codigo, nombre, direccion, colonia, codigo_postal, num_tel
 ('EEC-GE-M-01', 'Escuela de Enfermería', 'Calle de las Enfermeras 9999', 'Colonia Enfermería', 92890, '741852963', 'Eva Sánchez', 5, 0);
 
 -- F A C U L T A D  P O R  D E F E C T O --
-INSERT INTO facultad (codigo, nombre) VALUES
-('AAAA-AA-A-00', 'global');
+INSERT INTO facultad (codigo, nombre) VALUES ('AAAA-AA-A-00', 'Sin facultad');
+UPDATE facultad SET id = 0 WHERE id = (SELECT id FROM facultad WHERE codigo='AAAA-AA-A-00');
 
 -- ////////////////////////////////////////////////////////////////////////////////////////////////// --
 
@@ -612,6 +612,10 @@ INSERT INTO programa_educativo (codigo, nombre, id_facultad, id_nivel) VALUES
 ('VII-XAL-12540', 'Violín - Ciclo Iniciación', (SELECT id FROM facultad WHERE codigo='FTCV-GE-M-01'), 1),
 ('VCL-XAL-12541', 'Violoncello - Ciclo Iniciación', (SELECT id FROM facultad WHERE codigo='FTCV-GE-M-01'), 1),
 ('EAP-XAL-12542', 'Educación Artística con Perfiles Diferenciados Virtual', (SELECT id FROM facultad WHERE codigo='FTCV-GE-M-01'), 1);
+
+--Programa educativo global --
+INSERT INTO programa_educativo (codigo, nombre, id_facultad, id_nivel) VALUES 
+('AA-0000', 'Sin programa educativo', 0,0),
 
 -- ////////////////////////////////////////////////////////////////////////////////////////////////// --
 

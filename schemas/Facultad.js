@@ -5,6 +5,7 @@ const facultadSchema = z.object({
     // O B L I G A T O R I O 
     codigo: z.string().max(15, "El código no debe exceder 15 caracteres"),
     nombre: z.string().max(255, "El nombre no debe exceder 255 caracteres"),
+    id_region: z.number().int().positive(),
 
     // O P C I O N A L 
     id: z.number()
@@ -23,18 +24,14 @@ const facultadSchema = z.object({
         })
         .optional(),
     num_telefono: z
-        .string()
-        .max(15, "El número de teléfono no debe exceder 15 caracteres")
-        .regex(/^\+?\d*$/, "El número de teléfono debe contener solo dígitos y puede empezar con un '+'")
+        .string({ invalid_type_error: "El numero debe ser una cadena de caracteres" })
+        .max(15, "El número de teléfono no puede exceder los 15 caracteres.")
         .optional(),
     nombre_director: z.string().max(255, "El nombre del director no debe exceder 255 caracteres")
         .optional(),
     fecha_creacion: z
         .string()
         .datetime({ offset: true })
-        .optional(),
-    id_region: z.number().int().positive()
-        .nullable()
         .optional(),
     id_area: z.number().int().positive()
         .nullable()
