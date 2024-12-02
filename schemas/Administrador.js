@@ -1,9 +1,9 @@
 import z from 'zod'
-const usuarioSchema = z.object({
+const adminSchema = z.object({
     // - - - C A M P O S  O B L I G A T O R I O S - -
     correo: z.string()
-        .regex(/^[a-zA-Z0-9]{6,30}@uv\.mx$/, {
-            message: "El nombre de usuario debe tener entre 6 y 30 caracteres y terminar con @uv.mc",
+        .regex(/^[a-zA-Z0-9]{5,30}@admin\.uv\.mx$/, {
+            message: "El nombre de usuario debe tener entre 6 y 30 caracteres y terminar con @admin.uv.mx",
         }),
     clave: z.string()
         .min(8, "La contraseña debe tener al menos 8 caracteres")
@@ -13,7 +13,9 @@ const usuarioSchema = z.object({
         .regex(/[0-9]/, { message: "La contraseña debe incluir al menos un número" }),
     nombre: z.string()
         .regex(/^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s]+$/, "Nombre solo puede contener letras y espacios."),
-    rol: z.enum(["docente", "coordinador"], { message: "El rol es obligatorio" }),
+    id_facultad: z.number()
+        .int("El ID de facultad debe ser un número entero.")
+        .positive("El ID es un numero positivo"),
 
 
     // - - - C A M P O S  O P C I O N A L E S - - -
@@ -28,22 +30,18 @@ const usuarioSchema = z.object({
         .optional().nullable(),
     foto_perfil_ref: z.string()
         .optional().nullable(),
+    id: z.number().positive().optional().nullable(),
     codigo_facultad: z.string()
         .regex(/^[a-zA-Z0-9-]{10,15}$/, "Código de facultad debe ser de 10-15 caracteres, incluyendo letras mayúsculas, minúsculas, números y guion medio.")
-        .optional()
-        .nullable(),
-    id_facultad: z.number()
-        .int("El ID de facultad debe ser un número entero.")
         .optional().nullable(),
-    id: z.number().positive().optional().nullable()
 })
 
-export function validarUsuarioDatos(object) {
-    return usuarioSchema.safeParse(object)
+export function validarAdministradorDatos(object) {
+    return adminSchema.safeParse(object)
 }
 
-export function validarParcialmenteUsuarioDatos(object) {
-    return usuarioSchema.partial().safeParse(object)
+export function validarParcialmenteAdministradorDatos(object) {
+    return adminSchema.partial().safeParse(object)
 }
 
 

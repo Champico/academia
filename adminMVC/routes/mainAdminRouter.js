@@ -13,6 +13,7 @@ import { createPeriodoRouter } from './PeriodoRouter.js'
 import { createPerAcaRouter } from './PerAcaRouter.js'
 import { createNivelEducativoRouter } from './NivelEducativoRouter.js'
 import { createExperienciaEducativaRouter } from './ExperienciaEducativaRouter.js'
+import { createAdminSessionRouter } from './AdminSessionRouter.js'
 
 //Modelo
 import { AcademiaModel } from '../models/mysql/Academia.js'
@@ -26,6 +27,7 @@ import { RegionModel } from '../models/mysql/Region.js'
 import { UsuarioModel } from '../models/mysql/Usuario.js'
 import { ExperienciaEducativaModel } from '../models/mysql/ExperienciaEducativa.js'
 import { NivelEducativoModel } from '../models/mysql/NivelEducativo.js'
+import { AdminSessionModel } from '../models/mysql/AdminSession.js'
 
 
 export const createMainAdminRouter = () => {
@@ -42,6 +44,7 @@ export const createMainAdminRouter = () => {
     mainAdminRouter.use('/periodo', createPeriodoRouter({ periodoModel: PeriodoModel })) //API periodo
     mainAdminRouter.use('/periodoAcademia', createPerAcaRouter({ perAcaModel: PerAcaModel })) //API periodo y academias
     mainAdminRouter.use('/experienciaEducativa', createExperienciaEducativaRouter({ experienciaEducativaModel: ExperienciaEducativaModel })) //API periodo y academias
+    mainAdminRouter.use('/session', createAdminSessionRouter({ adminSessionModel: AdminSessionModel })) //API inicio sesion
 
 
     //Por defecto

@@ -9,10 +9,8 @@ const userSessionSchema = z.object({
         }),
     clave: z.string()
         .min(8, "La contraseña debe tener al menos 8 caracteres")
-        .regex(/[A-ZÁÉÍÓÚÑÜ]/, { message: "La contraseña debe incluir al menos una letra mayúscula" })
-        .regex(/[a-záéíóúñü]/, { message: "La contraseña debe incluir al menos una letra minúscula" })
-        .regex(/[0-9]/, { message: "La contraseña debe incluir al menos un número" }),
-    rol: z.enum(["docente", "coordinador"], { message: "El rol es obligatorio" }),
+        .max(64, "La contraseña puede tener hasta 64 caracteres"),
+    rol: z.enum(["docente", "coordinador"], { message: "El rol es obligatorio" }).optional(),
 
     // - - - O P C I O N A L E S - - -
     id: z.number().positive().optional().nullable()

@@ -627,109 +627,109 @@ INSERT INTO programa_educativo (codigo, nombre, id_facultad, id_nivel) VALUES
 
 
 -- A D M I N I S T R A D O R  G L O B A L --
-INSERT INTO administrador(correo,clave,id_facultad)  VALUES
-('administrador@admin.uv.mx', 'defaultpass', (SELECT id FROM facultad WHERE codigo='AAAA-AA-A-00'));
+-- INSERT INTO administrador(correo,clave,id_facultad)  VALUES
+-- ('administrador@admin.uv.mx', 'defaultpass', (SELECT id FROM facultad WHERE codigo='AAAA-AA-A-00'));
 
 -- A D M I N I S T R A D O R E S  R E G I O N  X A L A P A --
-INSERT INTO administrador (correo, clave, nombre, paterno, id_facultad) VALUES 
-('adminFAPX@admin.uv.mx', 'defaultpass', 'Administrador', 'FAP', (SELECT id FROM facultad WHERE codigo='FAPX-GE-M-01')),
-('adminFDAX@admin.uv.mx', 'defaultpass', 'Administrador', 'FDA', (SELECT id FROM facultad WHERE codigo='FDAX-GE-M-01')),
-('adminFMUX@admin.uv.mx', 'defaultpass', 'Administrador', 'FMU', (SELECT id FROM facultad WHERE codigo='FMUX-GE-M-01')),
-('adminFTX@admin.uv.mx', 'defaultpass', 'Administrador', 'FT',(SELECT id FROM facultad WHERE codigo= 'FTX-GE-M-01')),
-('adminFBX@admin.uv.mx', 'defaultpass', 'Administrador', 'FB',(SELECT id FROM facultad WHERE codigo= 'FBX-GE-M-01')),
-('adminFCAX@admin.uv.mx', 'defaultpass', 'Administrador', 'FCA', (SELECT id FROM facultad WHERE codigo='FCAX-GE-M-01')),
-('adminFBAX@admin.uv.mx', 'defaultpass', 'Administrador', 'FBA', (SELECT id FROM facultad WHERE codigo='FBAX-GE-M-01')),
-('adminFEX@admin.uv.mx', 'defaultpass', 'Administrador', 'FE',(SELECT id FROM facultad WHERE codigo= 'FEX-GE-M-01')),
-('adminFMX@admin.uv.mx', 'defaultpass', 'Administrador', 'FM',(SELECT id FROM facultad WHERE codigo= 'FMX-GE-M-01')),
-('adminFNX@admin.uv.mx', 'defaultpass', 'Administrador', 'FN',(SELECT id FROM facultad WHERE codigo= 'FNX-GE-M-01')),
-('adminFOX@admin.uv.mx', 'defaultpass', 'Administrador', 'FO',(SELECT id FROM facultad WHERE codigo= 'FOX-GE-M-01')),
-('adminFPSX@admin.uv.mx', 'defaultpass', 'Administrador', 'FPS', (SELECT id FROM facultad WHERE codigo='FPSX-GE-M-01')),
-('adminFCX@admin.uv.mx', 'defaultpass', 'Administrador', 'FC',(SELECT id FROM facultad WHERE codigo= 'FCX-GE-M-01')),
-('adminFECX@admin.uv.mx', 'defaultpass', 'Administrador', 'FEC', (SELECT id FROM facultad WHERE codigo='FECX-GE-M-01')),
-('adminFEIX@admin.uv.mx', 'defaultpass', 'Administrador', 'FEI', (SELECT id FROM facultad WHERE codigo='FEIX-GE-M-01')),
-('adminFASX@admin.uv.mx', 'defaultpass', 'Administrador', 'FAS', (SELECT id FROM facultad WHERE codigo='FASX-GE-M-01')),
-('adminFDX@admin.uv.mx', 'defaultpass', 'Administrador', 'FD',(SELECT id FROM facultad WHERE codigo= 'FDX-GE-M-01')),
-('adminFSX@admin.uv.mx', 'defaultpass', 'Administrador', 'FS',(SELECT id FROM facultad WHERE codigo= 'FSX-GE-M-01')),
-('adminFAX@admin.uv.mx', 'defaultpass', 'Administrador', 'FA',(SELECT id FROM facultad WHERE codigo= 'FAX-GE-M-01')),
-('adminFFX@admin.uv.mx', 'defaultpass', 'Administrador', 'FF',(SELECT id FROM facultad WHERE codigo= 'FFX-GE-M-01')),
-('adminFHX@admin.uv.mx', 'defaultpass', 'Administrador', 'FH',(SELECT id FROM facultad WHERE codigo= 'FHX-GE-M-01')),
-('adminFIDX@admin.uv.mx', 'defaultpass', 'Administrador', 'FID', (SELECT id FROM facultad WHERE codigo='FIDX-GE-M-01')),
-('adminFLEX@admin.uv.mx', 'defaultpass', 'Administrador', 'FLE', (SELECT id FROM facultad WHERE codigo='FLEX-GE-M-01')),
-('adminFPX@admin.uv.mx', 'defaultpass', 'Administrador', 'FP',(SELECT id FROM facultad WHERE codigo= 'FPX-GE-M-01')),
-('adminFARX@admin.uv.mx', 'defaultpass', 'Administrador', 'FAR', (SELECT id FROM facultad WHERE codigo='FARX-GE-M-01')),
-('adminFFIX@admin.uv.mx', 'defaultpass', 'Administrador', 'FFI', (SELECT id FROM facultad WHERE codigo='FFIX-GE-M-01')),
-('adminFMAX@admin.uv.mx', 'defaultpass', 'Administrador', 'FMA', (SELECT id FROM facultad WHERE codigo='FMAX-GE-M-01')),
-('adminFICX@admin.uv.mx', 'defaultpass', 'Administrador', 'FIC', (SELECT id FROM facultad WHERE codigo='FICX-GE-M-01')),
-('adminFQFX@admin.uv.mx', 'defaultpass', 'Administrador', 'FQF', (SELECT id FROM facultad WHERE codigo='FQFX-GE-M-01')),
-('adminFCQX@admin.uv.mx', 'defaultpass', 'Administrador', 'FCQ', (SELECT id FROM facultad WHERE codigo='FCQX-GE-M-01')),
-('adminFIX@admin.uv.mx', 'defaultpass', 'Administrador', 'FI',(SELECT id FROM facultad WHERE codigo= 'FIX-GE-M-01')),
-('adminFIEX@admin.uv.mx', 'defaultpass', 'Administrador', 'FIE', (SELECT id FROM facultad WHERE codigo='FIEX-GE-M-01')),
-('adminCSRSX@admin.uv.mx', 'defaultpass', 'Administrador', 'CSR', (SELECT id FROM facultad WHERE codigo='CSRS-GE-M-01')),
-('adminCIAX@admin.uv.mx', 'defaultpass', 'Administrador', 'CIA', (SELECT id FROM facultad WHERE codigo='CIAX-GE-M-01'));
+-- INSERT INTO administrador (correo, clave, nombre, paterno, id_facultad) VALUES 
+-- ('adminFAPX@admin.uv.mx', 'defaultpass', 'Administrador', 'FAP', (SELECT id FROM facultad WHERE codigo='FAPX-GE-M-01')),
+-- ('adminFDAX@admin.uv.mx', 'defaultpass', 'Administrador', 'FDA', (SELECT id FROM facultad WHERE codigo='FDAX-GE-M-01')),
+-- ('adminFMUX@admin.uv.mx', 'defaultpass', 'Administrador', 'FMU', (SELECT id FROM facultad WHERE codigo='FMUX-GE-M-01')),
+-- ('adminFTX@admin.uv.mx', 'defaultpass', 'Administrador', 'FT',(SELECT id FROM facultad WHERE codigo= 'FTX-GE-M-01')),
+-- ('adminFBX@admin.uv.mx', 'defaultpass', 'Administrador', 'FB',(SELECT id FROM facultad WHERE codigo= 'FBX-GE-M-01')),
+-- ('adminFCAX@admin.uv.mx', 'defaultpass', 'Administrador', 'FCA', (SELECT id FROM facultad WHERE codigo='FCAX-GE-M-01')),
+-- ('adminFBAX@admin.uv.mx', 'defaultpass', 'Administrador', 'FBA', (SELECT id FROM facultad WHERE codigo='FBAX-GE-M-01')),
+-- ('adminFEX@admin.uv.mx', 'defaultpass', 'Administrador', 'FE',(SELECT id FROM facultad WHERE codigo= 'FEX-GE-M-01')),
+-- ('adminFMX@admin.uv.mx', 'defaultpass', 'Administrador', 'FM',(SELECT id FROM facultad WHERE codigo= 'FMX-GE-M-01')),
+-- ('adminFNX@admin.uv.mx', 'defaultpass', 'Administrador', 'FN',(SELECT id FROM facultad WHERE codigo= 'FNX-GE-M-01')),
+-- ('adminFOX@admin.uv.mx', 'defaultpass', 'Administrador', 'FO',(SELECT id FROM facultad WHERE codigo= 'FOX-GE-M-01')),
+-- ('adminFPSX@admin.uv.mx', 'defaultpass', 'Administrador', 'FPS', (SELECT id FROM facultad WHERE codigo='FPSX-GE-M-01')),
+-- ('adminFCX@admin.uv.mx', 'defaultpass', 'Administrador', 'FC',(SELECT id FROM facultad WHERE codigo= 'FCX-GE-M-01')),
+-- ('adminFECX@admin.uv.mx', 'defaultpass', 'Administrador', 'FEC', (SELECT id FROM facultad WHERE codigo='FECX-GE-M-01')),
+-- ('adminFEIX@admin.uv.mx', 'defaultpass', 'Administrador', 'FEI', (SELECT id FROM facultad WHERE codigo='FEIX-GE-M-01')),
+-- ('adminFASX@admin.uv.mx', 'defaultpass', 'Administrador', 'FAS', (SELECT id FROM facultad WHERE codigo='FASX-GE-M-01')),
+-- ('adminFDX@admin.uv.mx', 'defaultpass', 'Administrador', 'FD',(SELECT id FROM facultad WHERE codigo= 'FDX-GE-M-01')),
+-- ('adminFSX@admin.uv.mx', 'defaultpass', 'Administrador', 'FS',(SELECT id FROM facultad WHERE codigo= 'FSX-GE-M-01')),
+-- ('adminFAX@admin.uv.mx', 'defaultpass', 'Administrador', 'FA',(SELECT id FROM facultad WHERE codigo= 'FAX-GE-M-01')),
+-- ('adminFFX@admin.uv.mx', 'defaultpass', 'Administrador', 'FF',(SELECT id FROM facultad WHERE codigo= 'FFX-GE-M-01')),
+-- ('adminFHX@admin.uv.mx', 'defaultpass', 'Administrador', 'FH',(SELECT id FROM facultad WHERE codigo= 'FHX-GE-M-01')),
+-- ('adminFIDX@admin.uv.mx', 'defaultpass', 'Administrador', 'FID', (SELECT id FROM facultad WHERE codigo='FIDX-GE-M-01')),
+-- ('adminFLEX@admin.uv.mx', 'defaultpass', 'Administrador', 'FLE', (SELECT id FROM facultad WHERE codigo='FLEX-GE-M-01')),
+-- ('adminFPX@admin.uv.mx', 'defaultpass', 'Administrador', 'FP',(SELECT id FROM facultad WHERE codigo= 'FPX-GE-M-01')),
+-- ('adminFARX@admin.uv.mx', 'defaultpass', 'Administrador', 'FAR', (SELECT id FROM facultad WHERE codigo='FARX-GE-M-01')),
+-- ('adminFFIX@admin.uv.mx', 'defaultpass', 'Administrador', 'FFI', (SELECT id FROM facultad WHERE codigo='FFIX-GE-M-01')),
+-- ('adminFMAX@admin.uv.mx', 'defaultpass', 'Administrador', 'FMA', (SELECT id FROM facultad WHERE codigo='FMAX-GE-M-01')),
+-- ('adminFICX@admin.uv.mx', 'defaultpass', 'Administrador', 'FIC', (SELECT id FROM facultad WHERE codigo='FICX-GE-M-01')),
+-- ('adminFQFX@admin.uv.mx', 'defaultpass', 'Administrador', 'FQF', (SELECT id FROM facultad WHERE codigo='FQFX-GE-M-01')),
+-- ('adminFCQX@admin.uv.mx', 'defaultpass', 'Administrador', 'FCQ', (SELECT id FROM facultad WHERE codigo='FCQX-GE-M-01')),
+-- ('adminFIX@admin.uv.mx', 'defaultpass', 'Administrador', 'FI',(SELECT id FROM facultad WHERE codigo= 'FIX-GE-M-01')),
+-- ('adminFIEX@admin.uv.mx', 'defaultpass', 'Administrador', 'FIE', (SELECT id FROM facultad WHERE codigo='FIEX-GE-M-01')),
+-- ('adminCSRSX@admin.uv.mx', 'defaultpass', 'Administrador', 'CSR', (SELECT id FROM facultad WHERE codigo='CSRS-GE-M-01')),
+-- ('adminCIAX@admin.uv.mx', 'defaultpass', 'Administrador', 'CIA', (SELECT id FROM facultad WHERE codigo='CIAX-GE-M-01'));
 
 -- A D M I N I S T R A D O R E S  R E G I O N  V E R A C R U Z --
-INSERT INTO administrador (correo, clave, nombre, paterno, id_facultad) VALUES 
-('adminFMVV@admin.uv.mx', 'defaultpass', 'Administrador', 'FMVV', (SELECT id FROM facultad WHERE codigo='FMVV-GE-M-01')),
-('adminFEFV@admin.uv.mx', 'defaultpass', 'Administrador', 'FEF', (SELECT id FROM facultad WHERE codigo='FEFV-GE-M-01')),
-('adminFBV@admin.uv.mx', 'defaultpass', 'Administrador', 'FB',(SELECT id FROM facultad WHERE codigo= 'FBV-GE-M-01')),
-('adminFEV@admin.uv.mx', 'defaultpass', 'Administrador', 'FE',(SELECT id FROM facultad WHERE codigo= 'FEV-GE-M-01')),
-('adminFMV@admin.uv.mx', 'defaultpass', 'Administrador', 'FM',(SELECT id FROM facultad WHERE codigo= 'FMV-GE-M-01')),
-('adminFNV@admin.uv.mx', 'defaultpass', 'Administrador', 'FN',(SELECT id FROM facultad WHERE codigo= 'FNV-GE-M-01')),
-('adminFOV@admin.uv.mx', 'defaultpass', 'Administrador', 'FO',(SELECT id FROM facultad WHERE codigo= 'FOV-GE-M-01')),
-('adminFPV@admin.uv.mx', 'defaultpass', 'Administrador', 'FP',(SELECT id FROM facultad WHERE codigo= 'FPV-GE-M-01')),
-('adminFAV@admin.uv.mx', 'defaultpass', 'Administrador', 'FA',(SELECT id FROM facultad WHERE codigo= 'FAV-GE-M-01')),
-('adminFCV@admin.uv.mx', 'defaultpass', 'Administrador', 'FC',(SELECT id FROM facultad WHERE codigo= 'FCV-GE-M-01')),
-('adminFTCV@admin.uv.mx', 'defaultpass', 'Administrador', 'FTC', (SELECT id FROM facultad WHERE codigo='FTCV-GE-M-01')),
-('adminFPEV@admin.uv.mx', 'defaultpass', 'Administrador', 'FPE', (SELECT id FROM facultad WHERE codigo='FPEV-GE-M-01')),
-('adminFIV@admin.uv.mx', 'defaultpass', 'Administrador', 'FIV',(SELECT id FROM facultad WHERE codigo= 'FIV-GE-M-01')),
-('adminFIVV@admin.uv.mx', 'defaultpass', 'Administrador', 'FIV',(SELECT id FROM facultad WHERE codigo= 'FIV-GE-M-02')),
-('adminFIVV2@admin.uv.mx', 'defaultpass', 'Administrador', 'FIV',(SELECT id FROM facultad WHERE codigo= 'FIV-GE-M-03')),
-('adminFIVV3@admin.uv.mx', 'defaultpass', 'Administrador', 'FIV',(SELECT id FROM facultad WHERE codigo= 'FIV-GE-M-04')),
-('adminCIAV@admin.uv.mx', 'defaultpass', 'Administrador', 'CIA', (SELECT id FROM facultad WHERE codigo='CIAV-GE-M-01')),
-('adminTLAV@admin.uv.mx', 'defaultpass', 'Administrador', 'TLA', (SELECT id FROM facultad WHERE codigo='TLAV-GE-M-01')),
-('adminDB@admin.uv.mx', 'defaultpass', 'Administrador', 'DB', (SELECT id FROM facultad WHERE codigo='DB-GE-M-03'));
+-- INSERT INTO administrador (correo, clave, nombre, paterno, id_facultad) VALUES 
+-- ('adminFMVV@admin.uv.mx', 'defaultpass', 'Administrador', 'FMVV', (SELECT id FROM facultad WHERE codigo='FMVV-GE-M-01')),
+-- ('adminFEFV@admin.uv.mx', 'defaultpass', 'Administrador', 'FEF', (SELECT id FROM facultad WHERE codigo='FEFV-GE-M-01')),
+-- ('adminFBV@admin.uv.mx', 'defaultpass', 'Administrador', 'FB',(SELECT id FROM facultad WHERE codigo= 'FBV-GE-M-01')),
+-- ('adminFEV@admin.uv.mx', 'defaultpass', 'Administrador', 'FE',(SELECT id FROM facultad WHERE codigo= 'FEV-GE-M-01')),
+-- ('adminFMV@admin.uv.mx', 'defaultpass', 'Administrador', 'FM',(SELECT id FROM facultad WHERE codigo= 'FMV-GE-M-01')),
+-- ('adminFNV@admin.uv.mx', 'defaultpass', 'Administrador', 'FN',(SELECT id FROM facultad WHERE codigo= 'FNV-GE-M-01')),
+-- ('adminFOV@admin.uv.mx', 'defaultpass', 'Administrador', 'FO',(SELECT id FROM facultad WHERE codigo= 'FOV-GE-M-01')),
+-- ('adminFPV@admin.uv.mx', 'defaultpass', 'Administrador', 'FP',(SELECT id FROM facultad WHERE codigo= 'FPV-GE-M-01')),
+-- ('adminFAV@admin.uv.mx', 'defaultpass', 'Administrador', 'FA',(SELECT id FROM facultad WHERE codigo= 'FAV-GE-M-01')),
+-- ('adminFCV@admin.uv.mx', 'defaultpass', 'Administrador', 'FC',(SELECT id FROM facultad WHERE codigo= 'FCV-GE-M-01')),
+-- ('adminFTCV@admin.uv.mx', 'defaultpass', 'Administrador', 'FTC', (SELECT id FROM facultad WHERE codigo='FTCV-GE-M-01')),
+-- ('adminFPEV@admin.uv.mx', 'defaultpass', 'Administrador', 'FPE', (SELECT id FROM facultad WHERE codigo='FPEV-GE-M-01')),
+-- ('adminFIV@admin.uv.mx', 'defaultpass', 'Administrador', 'FIV',(SELECT id FROM facultad WHERE codigo= 'FIV-GE-M-01')),
+-- ('adminFIVV@admin.uv.mx', 'defaultpass', 'Administrador', 'FIV',(SELECT id FROM facultad WHERE codigo= 'FIV-GE-M-02')),
+-- ('adminFIVV2@admin.uv.mx', 'defaultpass', 'Administrador', 'FIV',(SELECT id FROM facultad WHERE codigo= 'FIV-GE-M-03')),
+-- ('adminFIVV3@admin.uv.mx', 'defaultpass', 'Administrador', 'FIV',(SELECT id FROM facultad WHERE codigo= 'FIV-GE-M-04')),
+-- ('adminCIAV@admin.uv.mx', 'defaultpass', 'Administrador', 'CIA', (SELECT id FROM facultad WHERE codigo='CIAV-GE-M-01')),
+-- ('adminTLAV@admin.uv.mx', 'defaultpass', 'Administrador', 'TLA', (SELECT id FROM facultad WHERE codigo='TLAV-GE-M-01')),
+-- ('adminDB@admin.uv.mx', 'defaultpass', 'Administrador', 'DB', (SELECT id FROM facultad WHERE codigo='DB-GE-M-03'));
 
 -- A D M I N I S T R A D O R E S  R E G I O N  O R I Z A B A --
-INSERT INTO administrador (correo, clave, nombre, paterno, id_facultad) VALUES 
-('adminFBAO@admin.uv.mx', 'defaultpass', 'Administrador', 'FBA', (SELECT id FROM facultad WHERE codigo='FBAO-GE-M-01')),
-('adminFEO@admin.uv.mx', 'defaultpass', 'Administrador', 'FEO',(SELECT id FROM facultad WHERE codigo= 'FEO-GE-M-01')),
-('adminFMO@admin.uv.mx', 'defaultpass', 'Administrador', 'FMO',(SELECT id FROM facultad WHERE codigo= 'FMO-GE-M-01')),
-('adminFOO@admin.uv.mx', 'defaultpass', 'Administrador', 'FOO',(SELECT id FROM facultad WHERE codigo= 'FOO-GE-M-01')),
-('adminFCO@admin.uv.mx', 'defaultpass', 'Administrador', 'FCO',(SELECT id FROM facultad WHERE codigo= 'FCO-GE-M-01')),
-('adminFAO@admin.uv.mx', 'defaultpass', 'Administrador', 'FAO',(SELECT id FROM facultad WHERE codigo= 'FAO-GE-M-01')),
-('adminFCQO@admin.uv.mx', 'defaultpass', 'Administrador', 'FCQO', (SELECT id FROM facultad WHERE codigo='FCQO-GE-M-01')),
-('adminFIO@admin.uv.mx', 'defaultpass', 'Administrador', 'FIO',(SELECT id FROM facultad WHERE codigo= 'FIO-GE-M-01')),
-('adminDBO@admin.uv.mx', 'defaultpass', 'Administrador', 'DB', (SELECT id FROM facultad WHERE codigo='DB-GE-M-04'));
+-- INSERT INTO administrador (correo, clave, nombre, paterno, id_facultad) VALUES 
+-- ('adminFBAO@admin.uv.mx', 'defaultpass', 'Administrador', 'FBA', (SELECT id FROM facultad WHERE codigo='FBAO-GE-M-01')),
+-- ('adminFEO@admin.uv.mx', 'defaultpass', 'Administrador', 'FEO',(SELECT id FROM facultad WHERE codigo= 'FEO-GE-M-01')),
+-- ('adminFMO@admin.uv.mx', 'defaultpass', 'Administrador', 'FMO',(SELECT id FROM facultad WHERE codigo= 'FMO-GE-M-01')),
+-- ('adminFOO@admin.uv.mx', 'defaultpass', 'Administrador', 'FOO',(SELECT id FROM facultad WHERE codigo= 'FOO-GE-M-01')),
+-- ('adminFCO@admin.uv.mx', 'defaultpass', 'Administrador', 'FCO',(SELECT id FROM facultad WHERE codigo= 'FCO-GE-M-01')),
+-- ('adminFAO@admin.uv.mx', 'defaultpass', 'Administrador', 'FAO',(SELECT id FROM facultad WHERE codigo= 'FAO-GE-M-01')),
+-- ('adminFCQO@admin.uv.mx', 'defaultpass', 'Administrador', 'FCQO', (SELECT id FROM facultad WHERE codigo='FCQO-GE-M-01')),
+-- ('adminFIO@admin.uv.mx', 'defaultpass', 'Administrador', 'FIO',(SELECT id FROM facultad WHERE codigo= 'FIO-GE-M-01')),
+-- ('adminDBO@admin.uv.mx', 'defaultpass', 'Administrador', 'DB', (SELECT id FROM facultad WHERE codigo='DB-GE-M-04'));
 
 -- A D M I N I S T R A D O R E S  R E G I O N  P O Z A - R I C A   T U X P A N --
-INSERT INTO administrador (correo, clave, nombre, paterno, id_facultad) VALUES 
-('adminFBAP@admin.uv.mx', 'defaultpass', 'Administrador', 'FBA', (SELECT id FROM facultad WHERE codigo='FBAP-GE-M-01')),
-('adminFEP@admin.uv.mx', 'defaultpass', 'Administrador', 'FEP',(SELECT id FROM facultad WHERE codigo= 'FEP-GE-M-01')),
-('adminFMP@admin.uv.mx', 'defaultpass', 'Administrador', 'FMP',(SELECT id FROM facultad WHERE codigo= 'FMP-GE-M-01')),
-('adminFOP@admin.uv.mx', 'defaultpass', 'Administrador', 'FOP',(SELECT id FROM facultad WHERE codigo= 'FOP-GE-M-01')),
-('adminFPSP@admin.uv.mx', 'defaultpass', 'Administrador', 'FPSP', (SELECT id FROM facultad WHERE codigo='FPSP-GE-M-01')),
-('adminFCP@admin.uv.mx', 'defaultpass', 'Administrador', 'FCP',(SELECT id FROM facultad WHERE codigo= 'FCP-GE-M-01')),
-('adminFPP@admin.uv.mx', 'defaultpass', 'Administrador', 'FPP',(SELECT id FROM facultad WHERE codigo= 'FPP-GE-M-01')),
-('adminFTSP@admin.uv.mx', 'defaultpass', 'Administrador', 'FTSP', (SELECT id FROM facultad WHERE codigo='FTSP-GE-M-01')),
-('adminFAP@admin.uv.mx', 'defaultpass', 'Administrador', 'FAP',(SELECT id FROM facultad WHERE codigo= 'FAP-GE-M-01')),
-('adminFCQP@admin.uv.mx', 'defaultpass', 'Administrador', 'FCQP', (SELECT id FROM facultad WHERE codigo='FCQP-GE-M-01')),
-('adminFICP@admin.uv.mx', 'defaultpass', 'Administrador', 'FICP', (SELECT id FROM facultad WHERE codigo='FICP-GE-M-01')),
-('adminFIMP@admin.uv.mx', 'defaultpass', 'Administrador', 'FIMP', (SELECT id FROM facultad WHERE codigo='FIMP-GE-M-01')),
-('adminFIEP@admin.uv.mx', 'defaultpass', 'Administrador', 'FIEP', (SELECT id FROM facultad WHERE codigo='FIEP-GE-M-01')),
-('adminDBP@admin.uv.mx', 'defaultpass', 'Administrador', 'DB', (SELECT id FROM facultad WHERE codigo='DB-GE-M-05'));
+-- INSERT INTO administrador (correo, clave, nombre, paterno, id_facultad) VALUES 
+-- ('adminFBAP@admin.uv.mx', 'defaultpass', 'Administrador', 'FBA', (SELECT id FROM facultad WHERE codigo='FBAP-GE-M-01')),
+-- ('adminFEP@admin.uv.mx', 'defaultpass', 'Administrador', 'FEP',(SELECT id FROM facultad WHERE codigo= 'FEP-GE-M-01')),
+-- ('adminFMP@admin.uv.mx', 'defaultpass', 'Administrador', 'FMP',(SELECT id FROM facultad WHERE codigo= 'FMP-GE-M-01')),
+-- ('adminFOP@admin.uv.mx', 'defaultpass', 'Administrador', 'FOP',(SELECT id FROM facultad WHERE codigo= 'FOP-GE-M-01')),
+-- ('adminFPSP@admin.uv.mx', 'defaultpass', 'Administrador', 'FPSP', (SELECT id FROM facultad WHERE codigo='FPSP-GE-M-01')),
+-- ('adminFCP@admin.uv.mx', 'defaultpass', 'Administrador', 'FCP',(SELECT id FROM facultad WHERE codigo= 'FCP-GE-M-01')),
+-- ('adminFPP@admin.uv.mx', 'defaultpass', 'Administrador', 'FPP',(SELECT id FROM facultad WHERE codigo= 'FPP-GE-M-01')),
+-- ('adminFTSP@admin.uv.mx', 'defaultpass', 'Administrador', 'FTSP', (SELECT id FROM facultad WHERE codigo='FTSP-GE-M-01')),
+-- ('adminFAP@admin.uv.mx', 'defaultpass', 'Administrador', 'FAP',(SELECT id FROM facultad WHERE codigo= 'FAP-GE-M-01')),
+-- ('adminFCQP@admin.uv.mx', 'defaultpass', 'Administrador', 'FCQP', (SELECT id FROM facultad WHERE codigo='FCQP-GE-M-01')),
+-- ('adminFICP@admin.uv.mx', 'defaultpass', 'Administrador', 'FICP', (SELECT id FROM facultad WHERE codigo='FICP-GE-M-01')),
+-- ('adminFIMP@admin.uv.mx', 'defaultpass', 'Administrador', 'FIMP', (SELECT id FROM facultad WHERE codigo='FIMP-GE-M-01')),
+-- ('adminFIEP@admin.uv.mx', 'defaultpass', 'Administrador', 'FIEP', (SELECT id FROM facultad WHERE codigo='FIEP-GE-M-01')),
+-- ('adminDBP@admin.uv.mx', 'defaultpass', 'Administrador', 'DB', (SELECT id FROM facultad WHERE codigo='DB-GE-M-05'));
 
 -- A D M I N I S T R A D O R E S  R E G I O N  C O A T Z A C O A L C O S - M I N A T I T L A N --
-INSERT INTO administrador (correo, clave, nombre, paterno, id_facultad) VALUES 
-('adminFBAC@admin.uv.mx', 'defaultpass', 'Administrador', 'FBA', (SELECT id FROM facultad WHERE codigo='FBAC-GE-M-01')),
-('adminFEC@admin.uv.mx', 'defaultpass', 'Administrador', 'FEC',(SELECT id FROM facultad WHERE codigo= 'FEC-GE-M-01')),
-('adminFMC@admin.uv.mx', 'defaultpass', 'Administrador', 'FMC',(SELECT id FROM facultad WHERE codigo= 'FMC-GE-M-01')),
-('adminFOC@admin.uv.mx', 'defaultpass', 'Administrador', 'FOC',(SELECT id FROM facultad WHERE codigo= 'FOC-GE-M-01')),
-('adminFCAC@admin.uv.mx', 'defaultpass', 'Administrador', 'FCAC', (SELECT id FROM facultad WHERE codigo='FCAC-GE-M-01')),
-('adminFTSC@admin.uv.mx', 'defaultpass', 'Administrador', 'FTSC', (SELECT id FROM facultad WHERE codigo='FTSC-GE-M-01')),
-('adminFCQC@admin.uv.mx', 'defaultpass', 'Administrador', 'FCQC', (SELECT id FROM facultad WHERE codigo='FCQC-GE-M-01')),
-('adminFIC@admin.uv.mx', 'defaultpass', 'Administrador', 'FIC',(SELECT id FROM facultad WHERE codigo= 'FIC-GE-M-01')),
-('adminDBC@admin.uv.mx', 'defaultpass', 'Administrador', 'DB',(SELECT id FROM facultad WHERE codigo='DB-GE-M-06')),
-('adminEEC@admin.uv.mx', 'defaultpass', 'Administrador', 'EEC', (SELECT id FROM facultad WHERE codigo='EEC-GE-M-01'));
+-- INSERT INTO administrador (correo, clave, nombre, paterno, id_facultad) VALUES 
+-- ('adminFBAC@admin.uv.mx', 'defaultpass', 'Administrador', 'FBA', (SELECT id FROM facultad WHERE codigo='FBAC-GE-M-01')),
+-- ('adminFEC@admin.uv.mx', 'defaultpass', 'Administrador', 'FEC',(SELECT id FROM facultad WHERE codigo= 'FEC-GE-M-01')),
+-- ('adminFMC@admin.uv.mx', 'defaultpass', 'Administrador', 'FMC',(SELECT id FROM facultad WHERE codigo= 'FMC-GE-M-01')),
+-- ('adminFOC@admin.uv.mx', 'defaultpass', 'Administrador', 'FOC',(SELECT id FROM facultad WHERE codigo= 'FOC-GE-M-01')),
+-- ('adminFCAC@admin.uv.mx', 'defaultpass', 'Administrador', 'FCAC', (SELECT id FROM facultad WHERE codigo='FCAC-GE-M-01')),
+-- ('adminFTSC@admin.uv.mx', 'defaultpass', 'Administrador', 'FTSC', (SELECT id FROM facultad WHERE codigo='FTSC-GE-M-01')),
+-- ('adminFCQC@admin.uv.mx', 'defaultpass', 'Administrador', 'FCQC', (SELECT id FROM facultad WHERE codigo='FCQC-GE-M-01')),
+-- ('adminFIC@admin.uv.mx', 'defaultpass', 'Administrador', 'FIC',(SELECT id FROM facultad WHERE codigo= 'FIC-GE-M-01')),
+-- ('adminDBC@admin.uv.mx', 'defaultpass', 'Administrador', 'DB',(SELECT id FROM facultad WHERE codigo='DB-GE-M-06')),
+-- ('adminEEC@admin.uv.mx', 'defaultpass', 'Administrador', 'EEC', (SELECT id FROM facultad WHERE codigo='EEC-GE-M-01'));
 
 -- ////////////////////////////////////////////////////////////////////////////////////////////////// --
 

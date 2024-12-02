@@ -5,6 +5,7 @@ import { DEFAULT_CONFIG } from './ConfigDB.js';
 import { SALT_ROUNDS } from '../../../config.js'
 import { NotFoundError, DBCannotCreateError, UserAlredyExitsError, DBConnectionError, UserDoesntExitsError } from '../../errors/error.js';
 import bcrypt from 'bcrypt'
+import PasswordInvalidError from '../../errors/loginErrors/PasswordInvalidError.js';
 
 const connectionString = process.env.DATABASE_UTL ?? DEFAULT_CONFIG;
 
@@ -14,7 +15,6 @@ let connection;
     try {
         connection = await mysql.createConnection(connectionString);
     } catch (error) {
-        console.error('Error al conectar a la base de datos: ', error);
         process.exit(1);
     }
 })();
@@ -24,7 +24,7 @@ export class UserSessionModel {
     // : : : : : : :  L O G I N  : : : : : : : :
     static async login({ correo, clave }) {
 
-        console.log("Correo y clave despues de pasar", correo, " ", clave)
+        console.log("Correo y clave en el modelo UserSession: ", correo, " ", clave)
 
         let usuario;
 
@@ -41,9 +41,10 @@ export class UserSessionModel {
         if (!usuario || usuario.length === 0) throw new UserDoesntExitsError()
 
         const isValid = await bcrypt.compareSync(clave, usuario[0].clave)
-        if (!isValid) throw new Error('password is invalid')
+        if (!isValid) throw new PasswordInvalidError()
 
         const { clave: _, ...publicUser } = usuario[0]
+        console.log(publicUser)
 
         return publicUser
     }
@@ -74,7 +75,6 @@ export class UserSessionModel {
             );
 
         } catch (e) {
-            console.info("Error de la base de datos por: ", e)
             throw new DBConnectionError()
         }
 
@@ -111,22 +111,45 @@ export class UserSessionModel {
                  VALUES (?, ?, ?, ?, ?, ?, ?)`,
                 [correo, hashedPassword, nombre, paterno, materno, rol, idFacultad]
             );
-        } catch (e) {
-            console.error(e);
-            throw new DBCannotCreateError('Error al crear usuario');
+        } catch {
+            throw new DBCannotCreateError('No se puedo crear el usuario')
         }
 
-        const [usuario] = await connection.query(
-            `SELECT id, correo, nombre, paterno, materno, rol, id_facultad 
+        try {
+            const [usuario] = await connection.query(
+                `SELECT correo, nombre, paterno, materno, rol, id_facultad 
              FROM usuario WHERE correo = ?`,
-            [correo]
-        );
+                [correo]
+            );
+        } catch {
+            throw new DBConnectionError
+        }
 
         if (!usuario || usuario.length === 0) {
             throw new NotFoundError('Usuario no encontrado después de la creación');
         }
 
         return usuario[0];
+    }
+
+
+    static async getUserData({ correo }) {
+        try {
+            const [usuario] = await connection.query(
+                `SELECT correo, nombre, paterno, materno, rol, id_facultad 
+                 FROM usuario WHERE correo = ?`,
+                [correo]
+            );
+
+            if (!usuario || usuario.length === 0) {
+                throw new NotFoundError('Usuario no encontrado');
+            }
+
+            return usuario[0];
+
+        } catch {
+            throw new DBConnectionError
+        }
     }
 
 }

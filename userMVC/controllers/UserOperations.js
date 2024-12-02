@@ -19,16 +19,11 @@ export class UserOperationsController {
 
         if (rol === 'docente') {
             academias = await this.docenteModel.obtenerAcademias({ correo })
-
             if (!academias || academias.length === 0) return res.status(200).json({ message: 'No tiene academias' })
-
             return res.status(200).json({ academias })
-
         } else if (rol === 'coordinador') {
             academias = await this.coordinadorModel.obtenerAcademias({ correo })
-
             if (!academias) return res.status(200).json({ message: 'No tiene academias' })
-
             return res.status(200).json(academias)
         }
 
@@ -40,7 +35,6 @@ export class UserOperationsController {
     obtenerAcademia = async (req, res) => {
         const { user } = req.session
         if (!user) return res.status(401).json({ message: 'No ha iniciado sesión', status: '401 No autorizado' })
-
     }
 
 }
